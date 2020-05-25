@@ -1,0 +1,2 @@
+# CaptureHide
+ Screen Capture Stop
