@@ -16,7 +16,13 @@ SetWindowDisplayAffinity() is available under Windows 7 and newer. The class dyn
 
 ## MDI Issues
 
-Preventing capture on an MDI child window fails. The SetWindowDisplayAffinity() must be done on the MDI Frame. I modified the Class to add MDI methods that find the Frame (GetAnsestor Root). I uploaded a Frame test project CapHideMdiTest.cwproj and it all works. 
+Preventing capture on an MDI child window fails. The SetWindowDisplayAffinity() must be done on the MDI Frame. I modified the Class to add MDI methods that find the Frame (GetAncestor Root). I uploaded a Frame test project CapHideMdiTest.cwproj and it all works. 
 
-I have not implemented this in live code. If I did I would probably implement it all in the Frame and Post events for Capture Hide / Capture OK. The example is simple and hides the frame from the Client 1 procedure.
- 
+I have not implemented this in live code. If I did I would probably implement it all in the Frame and Post events for Capture Hide / Capture OK. The example is simple and hides the frame from the Client 1 procedure. This does work fine if you have just one window to protect.
+
+## TeamViewer Issues
+
+I was remoted in using TeamViewer. As soon as I turned on Capture Stop the frame window turned all black for me remotely. The local user could still see the window fine. I read online that Remote Desktop does not have this issue.
+
+
+So it seems this Capture Hide will NOT be useful.
