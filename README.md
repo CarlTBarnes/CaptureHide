@@ -13,3 +13,10 @@ The Allow Capture button shows monitor view of the tab.
 
 ## Requirements
 SetWindowDisplayAffinity() is available under Windows 7 and newer. The class dynamically loads User32.DLL and does GetProcAddress(). If run under Vista or XP the program will load and run fine, it will not prevent capture.
+
+## MDI Issues
+
+Preventing capture on an MDI child window fails. The SetWindowDisplayAffinity() must be done on the MDI Frame. I modified the Class to add MDI methods that find the Frame (GetAnsestor Root). I uploaded a Frame test project CapHideMdiTest.cwproj and it all works. 
+
+I have not implemented this in live code. If I did I would probably implement it all in the Frame and Post events for Capture Hide / Capture OK. The example is simple and hides the frame from the Client 1 procedure.
+ 
